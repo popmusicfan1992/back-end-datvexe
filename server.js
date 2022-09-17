@@ -42,9 +42,9 @@ app.use("/public", express.static(publicPathDicrectory));
 app.use("/api/v1", rootRouter);
 
 //Lắng nghe sự kiện kết nối
-const port = 8000;
-app.listen(port, async () => {
-	console.log("App listening on " + port);
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, async () => {
+	console.log("App listening on " + PORT);
 	try {
 		await sequelize.authenticate();
 		console.log("Connection has been established successfully.");
